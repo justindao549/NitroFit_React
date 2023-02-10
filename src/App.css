@@ -1,39 +1,117 @@
-.App {
-  text-align: center;
+.RedAcc {
+	color: #f25022;
+}
+.GreyAcc {
+	color: #737373;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+	color: #768079;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.About-Border {
+	border-top: 5px solid #f25022;
+	border-left: 1px solid #f25022;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.banner-card {
+	display: flex;
+	position: relative;
+	max-width: 100%;
+	width: auto;
+	height: auto;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.banner-card video {
+	display: inline-block;
+	position: relative;
+	width: 98.4vw;
+	height: 100%;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.banner-text {
+	background-color: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	transform: translate(50%, 50%);
+}
+
+/*
+.video-wrapper {
+	display: flex;
+	position: relative;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+ video {
+	position: relative;
+	width: 98vw;
+	height: 100%;
+	display: block;
+	overflow: hidden;
+}
+.video-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+} */
+
+@font-face {
+	font-family: 'future_z';
+	src: url('app/assets/fonts/future_z/Future Z.ttf') format('truetype');
+}
+
+h1,
+Nav,
+.video-text {
+	font-family: 'future_z';
+}
+
+.navbar .nav-link {
+	color: #737373;
+	position: relative;
+	border-bottom: 1px solid #c6c6c6;
+}
+
+.navbar .nav-link::after {
+	background: none repeat scroll 0 0 transparent;
+	bottom: 0;
+	content: '';
+	height: 4px;
+	left: 50%;
+	position: absolute;
+	background: #f25022;
+	transition: width 1s ease 0s, left 1s ease 0s;
+	width: 0;
+}
+.navbar .nav-link:hover::after {
+	width: 100%;
+	left: 0;
+	transition: width 1s ease 0s, left 1s ease 0s;
+}
+
+.navbar .nav-link:hover {
+	color: white;
+	background-color: #bababa;
+}
+
+.navbar .nav-link.active {
+	color: #f25022;
+	border-top: 1px solid #c6c6c6;
+	border-left: 1px solid #c6c6c6;
+	border-right: 1px solid #c6c6c6;
+	border-bottom: 0px;
+}
+
+@media only screen and (max-width: 1029px) {
+	.navbar .nav-link,
+	.navbar .nav-link.active {
+		border: none;
+	}
+}
+button.custom-toggler.navbar-toggler {
+	background-color: #ee5d35;
+	border: none;
 }
