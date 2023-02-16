@@ -1,13 +1,5 @@
-import {
-	Container,
-	Row,
-	Col,
-	Card,
-	Button,
-	CardTitle,
-	CardText,
-} from 'reactstrap';
-import ClassesPage from './ClassesPage';
+import { Container, Row, Col } from 'reactstrap';
+
 import React from 'react';
 import video from '../app/assets/ShortWorkoutVideo.mov';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,76 +10,95 @@ import {
 	faInstagram,
 	faFacebook,
 } from '@fortawesome/free-brands-svg-icons';
+
 const HomePage = () => {
 	return (
-		<Container fluid className="p-0">
+		<Container fluid id="HomePage">
 			{/* <SubHeader current="Home" /> */}
-			<div>
-				<div className="banner-card">
-					<div className="banner-text text-center">
-						<div
-							style={{
-								background:
-									'linear-gradient(45deg, rgba(52, 52, 52, 0) 50%, white 50%)',
-								width: '15%',
-								aspectRatio: 1 / 1,
-								position: 'absolute',
-								top: 0,
-								right: 0,
-								padding: 0,
-								margin: 0,
-							}}></div>
-						<div>
-							<div style={{ fontSize: '20vw' }}>
-								<span className="RedAcc"> N</span>
-								<span className="GreyAcc ">F</span>
-							</div>
-							<p
-								className="text-center"
-								style={{ color: 'white', fontSize: '1.5vmax' }}>
-								Transform your life
-							</p>
-						</div>
-						<div
-							style={{
-								background:
-									'linear-gradient(45deg, white 50%,rgba(52, 52, 52, 0) 50%)',
-								width: '15%',
-								aspectRatio: 1 / 1,
-								position: 'absolute',
-								bottom: 0,
-								padding: 0,
-							}}></div>
-					</div>
+			<Row
+				style={{
+					position: 'relative',
+				}}>
+				<video
+					src={video}
+					autoPlay
+					loop
+					muted
+					style={{
+						position: 'relative',
+						width: '100%',
+					}}></video>
+				<div
+					style={{
+						position: 'absolute',
+						background:
+							'linear-gradient(45deg, rgba(52, 52, 52, 0) 50%, white 50%)',
+						width: '15%',
+						aspectRatio: 1 / 1,
+						top: 0,
+						right: 0,
+						padding: 0,
+						margin: 0,
+					}}></div>
+				<div
+					className="video-text "
+					style={{
+						position: 'absolute',
+						fontSize: '20vw',
+						textAlign: 'center',
+					}}>
+					<span className="RedAcc"> N</span>
+					<span className="GreyAcc ">F</span>
 				</div>
-				<video src={video} autoPlay loop muted></video>
-			</div>
-			<Container>
-				<Row>
-					<Col className=" p-0 my-5 d-flex align-middle">
-						<FontAwesomeIcon icon={faYoutube} size="3x" />
-						<FontAwesomeIcon icon={faTwitter} size="3x" />
-						<FontAwesomeIcon icon={faInstagram} size="3x" />
-						<FontAwesomeIcon icon={faFacebook} size="3x" />
-					</Col>
-				</Row>
-				<Row className="my-5 mx-5 About-Border">
-					<h1 className="my-3 text-left">WE GET THINGS DONE</h1>
-					<h3 className="my-3 text-left">About Us</h3>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s, when an unknown printer took a galley of type
-						and scrambled it to make a type specimen book. It has survived not
-						only five centuries, but also the leap into electronic typesetting,
-						remaining essentially unchanged. It was popularised in the 1960s
-						with the release of Letraset sheets containing Lorem Ipsum passages,
-						and more recently with desktop publishing software like Aldus
-						PageMaker including versions of Lorem Ipsum.
-					</p>
-				</Row>
-				{/* <ClassesPage /> */}
-			</Container>
+				<div
+					className="video-text text-center"
+					style={{
+						position: 'absolute',
+						bottom: '20%',
+						color: 'white',
+						fontSize: '1.5vmax',
+					}}>
+					Transform your life
+				</div>
+				<div
+					style={{
+						position: 'absolute',
+						background:
+							'linear-gradient(45deg, white 50%,rgba(52, 52, 52, 0) 50%)',
+						width: '15%',
+						aspectRatio: 1 / 1,
+						bottom: 0,
+						padding: 0,
+					}}></div>
+			</Row>
+			<Row>
+				<Col
+					className=" d-flex justify-content-around Icon-Col"
+					style={{
+						marginLeft: '20%',
+						marginRight: '20%',
+						paddingTop: '2%',
+						paddingBottom: '2%',
+					}}>
+					<FontAwesomeIcon className="Icon" icon={faYoutube} size="3x" />
+					<FontAwesomeIcon className="Icon" icon={faTwitter} size="3x" />
+					<FontAwesomeIcon className="Icon" icon={faInstagram} size="3x" />
+					<FontAwesomeIcon className="Icon" icon={faFacebook} size="3x" />
+				</Col>
+			</Row>
+			<Row className="my-5 mx-5" style={{ position: 'relative' }}>
+				<div
+					style={{
+						position: 'absolute',
+						background:
+							'linear-gradient(45deg, rgba(52, 52, 52, 0) 50%,white 50%)',
+						width: '15%',
+						aspectRatio: 1 / 1,
+						top: 0,
+						right: 0,
+						padding: 0,
+					}}></div>
+			</Row>
 		</Container>
 	);
 };

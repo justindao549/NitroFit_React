@@ -9,10 +9,15 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import React from 'react';
+import SignUpModal from './SignUpModal';
+import { Link } from 'react-scroll';
+
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
+	const screenWindowWidth = window.innerWidth > 500 ? -150 : -350;
+
 	return (
-		<Navbar className="bg-white" dark sticky="top" expand="lg">
+		<Navbar className="bg-white Small shadow" dark sticky="top" expand="lg">
 			<NavbarBrand href="/">
 				<h1 className="text-[#fb5a6e] ">
 					<span className="RedAcc"> n</span>
@@ -27,13 +32,56 @@ const Header = () => {
 
 			<Collapse isOpen={menuOpen} navbar>
 				<Nav className="ms-auto navbar d-flex flex-column flex-lg-row ">
-					<NavItem>
+					{/* <div>{screenWindowWidth}</div>
+					<div>{window.innerWidth}</div> */}
+
+					<Link
+						to="HomePage"
+						spy={true}
+						smooth={true}
+						offset={-300}
+						duration={500}
+						className="nav-link"
+						onClick={() => setMenuOpen(!menuOpen)}>
+						Home
+					</Link>
+					<Link
+						to="AboutPage"
+						spy={true}
+						smooth={true}
+						offset={screenWindowWidth}
+						duration={500}
+						className="nav-link"
+						onClick={() => setMenuOpen(!menuOpen)}>
+						About
+					</Link>
+					<Link
+						to="ClassesPage"
+						spy={true}
+						smooth={true}
+						offset={screenWindowWidth}
+						duration={500}
+						className="nav-link"
+						onClick={() => setMenuOpen(!menuOpen)}>
+						Classes
+					</Link>
+					<Link
+						to="PricingPage"
+						spy={true}
+						smooth={true}
+						offset={screenWindowWidth}
+						duration={500}
+						className="nav-link"
+						onClick={() => setMenuOpen(!menuOpen)}>
+						Pricing
+					</Link>
+					{/* <NavItem>
 						<NavLink className="nav-link" to="/">
 							Home
 						</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink className="nav-link" to="/About">
+						<NavLink className="nav-link" to="/AboutPage">
 							About
 						</NavLink>
 					</NavItem>
@@ -46,17 +94,8 @@ const Header = () => {
 						<NavLink className="nav-link" to="/Pricing">
 							Pricing
 						</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink className="nav-link" to="/Sign-Up">
-							Sign-Up
-						</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink className="nav-link" to="/contact">
-							Contact
-						</NavLink>
-					</NavItem>
+					</NavItem> */}
+					<SignUpModal></SignUpModal>
 				</Nav>
 			</Collapse>
 		</Navbar>
